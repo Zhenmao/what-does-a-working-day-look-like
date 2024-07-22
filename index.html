@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What Does a Working Day Look Like?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="intro">
+        <div>
+          <h1
+            >What does<br />
+            a working day <br />look like?</h1
+          >
+        </div>
+        <div>
+          <p
+            >Not all workings days are alike.
+            <a href="https://www.bls.gov/tus/tables/a4-2122.htm" target="_blank"
+              >American Time Use Survey</a
+            >
+            data provide a window into the working hours of different
+            occupations.
+          </p>
+          <p
+            >This visualization shows percent of employed persons working at
+            each hour during a working day.</p
+          >
+          <p
+            >Scroll to compare
+            <span class="highlight benchmark">all occupations</span>
+            and
+            <span class="highlight comparison">specific occupations</span>.</p
+          >
+        </div>
+      </section>
+      <section class="scroll">
+        <div class="sticky"></div>
+        <div class="steps"></div>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="work-hours-chart.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

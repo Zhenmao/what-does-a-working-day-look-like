@@ -1,0 +1,210 @@
+:root {
+  --clr-bg: #ece7e7;
+  --clr-text: #252726;
+  --clr-primary: #41bccc;
+  --clr-accent: #f2a50e;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  touch-action: pan-y;
+}
+
+body {
+  margin: 0;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4;
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+}
+
+h1 {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 2.986rem;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+a {
+  color: currentColor;
+}
+
+p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+p + p {
+  margin-top: 1em;
+}
+
+main {
+  width: min(100%, 1024px);
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+section + section {
+  margin-top: 2rem;
+}
+
+.intro {
+  display: flex;
+  gap: 1rem 4rem;
+  flex-wrap: wrap;
+}
+
+.intro > :first-child {
+  flex-grow: 1;
+}
+
+.intro > :last-child {
+  flex-basis: 0;
+  flex-grow: 9999;
+  min-width: 50%;
+}
+
+.highlight {
+  background-color: var(--clr-bg);
+  padding: 0.125em 0.25em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  border-radius: 0.25em;
+}
+
+.highlight.benchmark {
+  --clr-bg: var(--clr-primary);
+}
+
+.highlight.comparison {
+  --clr-bg: var(--clr-accent);
+}
+
+.scroll .sticky {
+  position: sticky;
+  top: 0;
+  z-index: 0;
+  user-select: none;
+}
+
+.scroll .steps {
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.scroll .step {
+  height: 100vh;
+  height: 100lvh;
+  display: grid;
+  place-items: center;
+}
+
+.scroll.visible .step {
+  scroll-snap-align: start;
+}
+
+.chart {
+  height: 640px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart.benchmark {
+  --theme: var(--clr-primary);
+}
+
+.chart.comparison {
+  --theme: var(--clr-accent);
+}
+
+.chart .chart-header {
+  display: flex;
+  height: 120px;
+}
+
+.chart .chart-header > * {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.chart .chart-header > *:first-child {
+  width: 40%;
+}
+
+.chart .chart-header > *:not(:first-child) {
+  width: 20%;
+  text-align: center;
+}
+
+.chart.comparison .chart-header > * {
+  margin-left: auto;
+  text-align: end;
+}
+
+.chart .occupation {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.chart .focus-hour,
+.chart .focus-value {
+  font-size: 2.074rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.chart .focus-value {
+  color: var(--theme);
+}
+
+.chart .chart-body {
+  flex: 1;
+}
+
+.chart .chart-body > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.chart linearGradient stop {
+  color: var(--theme);
+}
+
+.chart .axis {
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.chart .axis line,
+.chart .axis path {
+  stroke-opacity: 0.25;
+}
+
+.chart .line-path {
+  stroke-width: 2px;
+  stroke: var(--theme);
+  fill: none;
+}
+
+.chart .focus-rect {
+  fill: var(--clr-text);
+  fill-opacity: 0.1;
+}
