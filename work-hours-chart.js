@@ -18,6 +18,7 @@ class WorkHoursChart {
     this.formatX = (d) => {
       if (d === 0) return "12AM";
       if (d < 12) return d + "AM";
+      if (d === 12) return "12PM";
       return d - 12 + "PM";
     };
 
