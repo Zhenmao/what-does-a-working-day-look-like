@@ -173,7 +173,7 @@ class WorkHoursChart {
 
   moved(event) {
     const [px] = d3.pointer(event, this.svg.node());
-    const i = Math.floor(this.x.invert(px));
+    const i = Math.max(0, Math.floor(this.x.invert(px)));
     if (i !== this.focusIndex) {
       this.container.dispatch("focusindexchange", {
         detail: i,
